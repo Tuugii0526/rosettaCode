@@ -23,4 +23,4 @@ function numberOfNames(num) {
     }
     return p_n[num];
   }
-  console.log(numberOfNames(100))
+  
