@@ -10,3 +10,20 @@
 // Its arguments are never negative and it always terminates.
 
 // Write a function which returns the value of $A(m, n)$. Arbitrary precision is preferred (since the function grows so quickly), but not required.
+
+function ack(m, n) {
+    if(m===0)
+    {
+      return n+1
+    }
+    if(m>0 && n==0)
+    {
+      return ack(m-1,1)
+    }
+    else {
+      return ack(m-1,ack(m,n-1))
+    }
+    }
+console.time('time:')
+ack(9,5) //maximul call stack size exceeded
+console.timeEnd('time:')
