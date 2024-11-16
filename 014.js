@@ -1,14 +1,23 @@
 function isBalanced(str) {
-    if(str.startsWith(']'))
+    const checks=[]
+    for(let i=0;i<str.length;i++)
     {
-      return false
+      if(str[i]=='[')
+      {
+        checks.push(i) 
+        continue
+      }
+      if(str[i]==']' )
+      {
+        if(!checks.length && i<str.length)
+        {
+          return false
+        }
+        else {
+        checks.pop()
+        }
+      }
     }
-    for(let i=0;i<str.lenght;i++)
-    {
-      let position=i
-      let counter=i+1
-      while(str[counter])
-    }
+    return checks.length==0
    }
-   
-   
+   isBalanced("[]]]")
